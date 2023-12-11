@@ -3,23 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kodano</title>
-    <link rel="shortcut icon" type="imagem/png" href="imagens/Logo_Kodano.png">
-</head>
-<body>
+
+    <Link rel="Preconnect" href="https://fonts.googleapis.com">
+    <Link rel="Preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mulish&display=swap" type="text/css">
     
-<form>
-    <fieldset>
-        
-        Usuário: <br><input type="text"></input><br>
-        Senha: <br><input type="password"><br>
-        <button id="BTN_entrar">Entrar</button>
+    <!-- link de conexao do arquivo css -->
+    <link rel="stylesheet" type="text/css" href="Style.css">
 
-        <img src="imagens/Logo_Kodano.png" alt="Logo_Kodano">
+    <!-- Titulo que vai na aba de navegação -->
+    <title>Kodano</title>
 
-    </fieldset>
-</form>
+    <!-- logo que vai na aba de navegação -->
+    <link rel="shortcut icon" type="imagem/png" href="imagens/Logo_Kodano.png">
 
+</head>
 
+<body>
+    <div class="form-wrapper">
+        <div class="lado-formulario">
+            <!-- <a href="#" title="logo" ><img src="imagens/Logo_Kodano.png" class="logo" alt="0fin"></a> -->
+                
+                <!-- cria o formulario e login -->
+                <form class="my-form">
+
+                    <!-- mensagem de bem vindo -->
+                    <div class="linha-formulario-bem-vindo"> 
+                        <h1>Seja Bem-vindo ao</h1>
+                    </div>
+                    <div class="logo">
+                        <img src="imagens/Logo_Kodano.png" alt="logo">
+                    </div>
+
+                    <div class="linha-socials">
+                        <a href="#" title="Usuario google">
+                            <img src="imagens/logo_google.png" alt="Google"> User Google
+                        </a>
+                    </div>
+                    
+                    <!-- esse div cria um divisor com a palavra ou para dividir entre o metodo de login -->
+                    <div class="divisor">
+                        <div class="divisor-linha"></div> OU <div class="divisor-linha"></div>
+                    </div>
+
+                    <!-- cria a caixa de digitação do email -->
+                    <div class="formulario-digitaveis">
+                        <label for="email">E-mail:
+                            <input 
+                            type="email"
+                            id="email"
+                            name="email"
+                            autocomplete="off"
+                            placeholder="Digite seu E-mail"
+                            required
+                            >
+                        </label>
+                    </div>
+                    
+                    <!-- cria a caixa de digitação de senha -->
+                    <!-- ^ e $ - indica o começo e fim de uma string respctivamente
+                    (?=.*[A-Z]) verifica se possui ao menos uma letra maiuscula
+                    (?=,*\d) verifica se possui ao menos um numero entre 0-9
+                    [A-Za-z\d]{6,} verifica se o codigo possui 6 carateres possuindo ao menos 1 letra maiuscula e um numero. -->
+                    <div class="formulario-digitaveis">
+                        <label for="Senha">Senha:
+                            <input 
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Digite sua senha"
+                            title="Mínimo de 6 caracteres contendo pelo menos 1 letra maiuscula e 1 número"
+                            pattern="^(?=.*[A-Za-z])(?=,*\d)[A-Za-z\d]{8,}$"
+                            required
+                            >
+                        </label>
+                    </div>
+
+                    <!-- cria o botão de submite -->
+                    <button type="submit" class="my-form_butão">Login</button>
+
+                    <!-- cria dois links com reset e criação de senha -->
+                    <div class="my-form_actions">
+                        <a href="#" title="reset de senha">Reset de Senha</a>
+                        <a href="#" title="cria conta">Ainda não tenho uma conta</a>
+                    </div>
+                </form>
+            </div>
+            <div class="lado-informação">
+                <img src="imagens/mockup.png" alt="mockup" class="mockup">
+            </div>
+        </div>
+        <script src="Script.js"></script
 </body>
+
 </html>
