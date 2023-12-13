@@ -69,28 +69,30 @@ font-family: Mulish,sans-serif;
 }
 
 .form-wrapper{
-    position: relative;
+    
+    position: static;
     display: grid;
     grid-template-columns: 3fr 2fr;
+
 
 }
 
 .lado-formulario{
-    padding: 186px 32px 48px 32px;
+    padding: 84px 32px 48px 32px;
     display: flex;
     justify-content: center;
-    align-items: start;
+    align-items: center;
     background-color: white;
 }
 
 .lado-informação{
     height: auto;
-    padding: 248px 12px 8px 12px;
+    padding: 8px 12px 8px 12px;
     color: #401b30;
     display: flex;
     flex: 1;
     flex-direction: column;
-    justify-content: start;
+    justify-content: center;
     align-items: center;
     background: linear-gradient(92.15deg,
                 var(--blue-light) 30.13%,
