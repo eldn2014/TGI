@@ -58,7 +58,7 @@
                     <!-- cria a caixa de digitação de senha -->
                     <!-- ^ e $ - indica o começo e fim de uma string respctivamente
                     (?=.*[A-Z]) verifica se possui ao menos uma letra maiuscula
-                    (?=,*\d) verifica se possui ao menos um numero entre 0-9
+                    (?=.*\d) verifica se possui ao menos um numero entre 0-9
                     [A-Za-z\d]{6,} verifica se o codigo possui 6 carateres possuindo ao menos 1 letra maiuscula e um numero. -->
                     <div class="formulario-digitaveis">
                         <label for="Senha">Senha:
@@ -67,8 +67,8 @@
                             id="password"
                             name="password"
                             placeholder="Digite sua senha"
-                            title="Mínimo de 6 caracteres contendo pelo menos 1 letra maiuscula e 1 número"
-                            pattern="^(?=.*[A-Za-z])(?=,*\d)[A-Za-z\d]{8,}$"
+                            title="Mínimo de 8 caracteres contendo pelo menos 1 letra maiuscula e 1 número"
+                            pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
                             required
                             >
                         </label>
