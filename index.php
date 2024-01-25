@@ -1,3 +1,61 @@
+<?php
+
+// inclui o arquivo para abrir a conexao com o banco de dados
+ include('./assets/PHP/Conexao.php');
+
+//  verifica se o post contem email e senha
+ if(isset($_POST['email']) || isset($_POST['password'])){
+
+    if(strlen($_POST['email'])==0) //verifica de o campo email ta preenchido
+        {echo "Campo e-mail em branco, Favor verifique e preencha com seu E-mail";}
+
+    elseif(strlen($_POST['password'])==0)  // verifica de o campo senha ta preenchido
+        { echo "Campo Senha em branco, Favor verifique e preencha com sua senha";}
+
+    else
+        {
+            // faz a limpeza das senha e do login afim de evitar invasão de hackers
+            $email = $mysqli->real_escape_string($_POST['email']);
+            $senha = $mysqli->real_escape_string($_POST['password']);
+
+            // monta a query pra rodar
+            $sql_code = "SELECT * FROM users WHERE Email = '$email' AND Senha = '$senha'";
+
+            // Roda a consulta se der erro ele mata a consulta
+            $sql_query = $mysqli->query($sql_code) or die("Falha na execução do codigo SQL: ".$mysqli-> error);
+        
+            // Armazena quantos registros foram encontrados
+            $quantidade = $sql_query->num_rows;
+
+            if($quantidade == 1)
+                {
+                    // seta os dados encontrados na quarie a uma variavel
+                    $usuario = $sql_query->fetch_assoc();
+
+                    // verifica se não tem nenhuma outra session aberta
+                    if(!isset($_SESSION)){session_start(); }
+
+                    $_SESSION ['ID'] = $usuario['ID'];
+                    $_SESSION ['Nome'] = $usuario['Nome'];
+
+                    // Direciona para o painel apos o login
+                    header("Location: Painel.php");
+
+                }
+            else
+                {
+                    
+                    echo "<script>alert('Falha ao Logar revise seu E-mail e senha e tente novamente.');</script>";}
+
+
+        
+        }
+
+
+ }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,7 +83,7 @@
             <!-- <a href="#" title="logo" ><img src="imagens/Logo_Kodano.png" class="logo" alt="0fin"></a> -->
                 
                 <!-- cria o formulario e login -->
-                <form class="meu-form">
+                <form class="meu-form" method="POST">
 
                     <!-- mensagem de bem vindo -->
                     <div class="linha-formulario-bem-vindo"> 
@@ -35,7 +93,7 @@
                         <img src="assets/imagens/logo_Kodano.svg" alt="logo">
                     </div>
 
-                    
+                
                     <!-- esse div cria um divisor com a palavra ou para dividir entre o metodo de login -->
                     <div class="divisor">
                         <div class="divisor-linha"></div>-<div class="divisor-linha"></div>
