@@ -19,7 +19,7 @@
             $senha = $mysqli->real_escape_string($_POST['password']);
 
             // monta a query pra rodar
-            $sql_code = "SELECT * FROM users WHERE Email = '$email' AND Senha = '$senha'";
+            $sql_code = "SELECT * FROM users WHERE Email = '$email'";
 
             // Roda a consulta se der erro ele mata a consulta
             $sql_query = $mysqli->query($sql_code) or die("Falha na execução do codigo SQL: ".$mysqli-> error);
@@ -32,15 +32,23 @@
                     // seta os dados encontrados na quarie a uma variavel
                     $usuario = $sql_query->fetch_assoc();
 
-                    // verifica se não tem nenhuma outra session aberta
-                    if(!isset($_SESSION)){session_start(); }
+                    if(password_verify($senha, $usuario['Senha']))
+                        {
 
-                    $_SESSION ['ID'] = $usuario['ID'];
-                    $_SESSION ['Nome'] = $usuario['Nome'];
+                        // verifica se não tem nenhuma outra session aberta
+                        if(!isset($_SESSION)){session_start(); }
 
-                    // Direciona para o painel apos o login
-                    header("Location: Painel.php");
+                        $_SESSION ['ID'] = $usuario['ID'];
+                        $_SESSION ['Nome'] = $usuario['Nome'];
 
+                        // Direciona para o painel apos o login
+                        header("Location: Painel.php");
+
+                        }
+                    else
+                        {
+                            echo "<script>alert('Falha ao Logar, senha Incorreta revise sua senha e tente novamente.');</script>";
+                        }
                 }
             else
                 {
@@ -133,12 +141,12 @@
                     </div>
 
                     <!-- cria o botão de submite -->
-                    <button type="submit" class="my-form_butão">Login</button>
+                    <button type="submit" class="my-form_botão">Login</button>
 
                     <!-- cria dois links com reset e criação de senha -->
                     <div class="my-form_actions">
                         <a href="#" title="reset de senha">Reset de Senha</a>
-                        <a href="#" title="cria conta">Ainda não tenho uma conta</a>
+                        <a href="Cadastro.php" title="cria conta">Ainda não tenho uma conta</a>
                     </div>
                 </form>
             </div>

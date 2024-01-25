@@ -10,7 +10,9 @@
 
 body{
 font-size: 16px;
-background: var(--lado-informação-background);
+background: linear-gradient(92.15deg,
+            var(--blue-light) 30.13%,
+            var(--lado-informação-background) 95.43%);
 font-family: Mulish,sans-serif;
 
 }
@@ -78,7 +80,7 @@ font-family: Mulish,sans-serif;
 }
 
 .lado-formulario{
-    padding: 84px 32px 48px 32px;
+    padding: 13px 22px 13px 22px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -87,21 +89,21 @@ font-family: Mulish,sans-serif;
 
 .lado-informação{
     height: auto;
-    padding: 8px 12px 8px 12px;
     color: #401b30;
     display: flex;
     flex: 1;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(92.15deg,
-                var(--blue-light) 30.13%,
-                var(--lado-informação-background) 95.43%);
+    background: transparent;
 }
 
 .lado-informação img{
-    max-width: 360px;
+    width: 100%;
+    height: 100%;
     z-index: 1;
+    max-width: 768px;
+    max-height: 800px;
 }
 
 .formulario-digitaveis svg{
@@ -130,23 +132,12 @@ font-family: Mulish,sans-serif;
     z-index: 10;
 }
 
-@media (max-width: 840px){
-    .form.wrapper{
-        grid-template-columns: 1fr;
-        height: 100vh;
-    }
-    .lado-informação{
-        display: none;
-        padding: 48px 48px 48px 32px;
-    }
-}
-
 .logo{
     align-items: center;  
 }
 
 .logo img{
-    width: 400px;
+    width: 100%;
     height: auto;
 }
 
@@ -171,16 +162,12 @@ font-family: Mulish,sans-serif;
     flex-direction: column;
     gap: 8px;
     margin-bottom: 8px;
-}
-
-.linha-formulario-bem-vindo{
-    font-size: 20px;
+    font-size: 14px;
     justify-content: center;
     text-align: center;
-    
 }
 
-.my-form_butão{
+.my-form_botão{
     background: var(--Primaria);
     color: white;
     white-space: nowrap;
