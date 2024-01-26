@@ -145,7 +145,7 @@
 
                     <!-- cria dois links com reset e criação de senha -->
                     <div class="my-form_actions">
-                        <a href="#" title="reset de senha">Reset de Senha</a>
+                        <a href="Recuperar_senha.php" title="reset de senha">Reset de Senha</a>
                         <a href="Cadastro.php" title="cria conta">Ainda não tenho uma conta</a>
                     </div>
                 </form>
