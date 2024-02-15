@@ -34,7 +34,7 @@ $mail = new PHPMailer(true);
             $mysqli->query($sql);
 
             // Envie o e-mail com o link para redefinir a senha (substitua com sua própria lógica de envio de e-mail)
-            $link = "http://localhost/TGI/atualizar_senha.php?chave=$token";
+            $link = "https://evidently-promoted-lizard.ngrok-free.app/TGI/atualizar_senha.php?chave=$token";
             
                     $mail->CharSet = 'UTF-8';
                     $mail->isSMTP();
