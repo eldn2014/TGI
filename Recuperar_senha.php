@@ -75,8 +75,13 @@ $mail = new PHPMailer(true);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reset de senha</title>
+    <link rel="stylesheet" href="assets/CSS/Style_recu.css">
 </head>
 <body>
+
+<div id="Div-main">
+    <img src="assets/imagens/logo_Kodano.svg" alt="Logo">
+    <h4>Para Resetar a senha insira seu e-mail no campo abaixo</h4>
 
     <form method="POST" class="Recu_senha">
         <label for="email">E-mail:
@@ -90,10 +95,16 @@ $mail = new PHPMailer(true);
                 >
         </label>
 
-        <button type="submit" class="btn_rec_senha"> Enviar </button>
-
     </form>
-     
+
+    <div ID="div_buttons">
+
+        <button type="submit" class="btn_rec_senha"> Enviar </button>
+        <button onclick="window.open('index.php','_self')">Voltar</button>
+
+    </div>
     
+</div>
+        
 </body>
 </html>
