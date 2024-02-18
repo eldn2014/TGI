@@ -13,12 +13,16 @@ if(isset($_POST['nome_cad']) && isset($_POST['email_cad']) && isset($_POST['senh
     elseif(strlen($_POST['nome_cad'])==0)  // verifica de o campo senha ta preenchido
         { echo "<script>alert('Campo Nome em branco, Favor verifique e preencha com seu nome');</script>";}
 
+    elseif(strlen($_POST['sobrenome_cad'])==0)  // verifica de o campo senha ta preenchido
+        { echo "<script>alert('Campo Nome em branco, Favor verifique e preencha com seu sobrenome');</script>";}
+
     else
         {
             // faz a limpeza das senha e do login afim de evitar invasão de hackers
             $email = $mysqli->real_escape_string($_POST['email_cad']);
             $senha = password_hash($mysqli->real_escape_string($_POST['senha_cad']),PASSWORD_DEFAULT);
             $nome = $mysqli->real_escape_string($_POST['nome_cad']);
+            $sobrenome = $mysqli->real_escape_string($_POST['sobrenome_cad']);
         
             
 
@@ -39,7 +43,7 @@ if(isset($_POST['nome_cad']) && isset($_POST['email_cad']) && isset($_POST['senh
 
             elseif($quantidade == 0)
                 {
-                    $sql_code2 = "INSERT INTO users(Nome, Email, Senha) VALUES ('$nome','$email','$senha')";
+                    $sql_code2 = "INSERT INTO users(Nome, Sobrenome, Senha, Email) VALUES ('$nome','$sobrenome','$senha','$email')";
                     $mysqli->query($sql_code2) or die("Falha na execução do codigo SQL: ".$mysqli-> error);
                     echo "<script>alert('Seu cadastro foi realizado com sucesso, estamos direcionando você para a área de login');
                           window.open('index.php','_self');</script>";
@@ -82,13 +86,26 @@ if(isset($_POST['nome_cad']) && isset($_POST['email_cad']) && isset($_POST['senh
             <h4>Faça seu cadastro preenchendo os dados abaixo</h4>
 
             <div class="Cadastro">
-                <label for="Nome_cad">Nome:
+                <label for="nome_cad">Nome:
                     <input 
                     type="text"
                     id="nome_cad"
                     name="nome_cad"
                     autocomplete="off"
                     placeholder="Digite seu Nome"
+                    required
+                    >
+                </label>
+            </div>
+
+            <div class="Cadastro">
+                <label for="sobrenome_cad">Sobrenome:
+                    <input 
+                    type="text"
+                    id="sobrenome_cad"
+                    name="sobrenome_cad"
+                    autocomplete="off"
+                    placeholder="Digite seu Sobrenome"
                     required
                     >
                 </label>

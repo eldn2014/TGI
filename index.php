@@ -38,7 +38,7 @@
                         // verifica se não tem nenhuma outra session aberta
                         if(!isset($_SESSION)){session_start(); }
 
-                        $_SESSION ['ID'] = $usuario['ID'];
+                        $_SESSION ['ID_conta'] = $usuario['ID_conta'];
                         $_SESSION ['Nome'] = $usuario['Nome'];
 
                         // Direciona para o painel apos o login

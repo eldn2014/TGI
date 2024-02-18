@@ -59,9 +59,9 @@ $mail = new PHPMailer(true);
 
 
 
-            echo "Um e-mail foi enviado com instruções para redefinir a senha.";
+            echo "<script>alert('Um e-mail foi enviado com instruções para redefinir a senha.');</script>";
         } else {
-            echo "Este e-mail não está cadastrado.";
+            echo "<script>alert('Este e-mail não está cadastrado.');</script>";
         }
     }
 
@@ -95,14 +95,16 @@ $mail = new PHPMailer(true);
                 >
         </label>
 
-    </form>
-
     <div ID="div_buttons">
 
         <button type="submit" class="btn_rec_senha"> Enviar </button>
         <button onclick="window.open('index.php','_self')">Voltar</button>
 
     </div>
+
+    </form>
+
+    
     
 </div>
         

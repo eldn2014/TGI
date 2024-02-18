@@ -6,6 +6,7 @@
     <title>Atualizando Senha</title>
     <script src="jquery/jquery-3.5.1.min.js"></script>
     <script src="assets/Json/Funcoes.js"></script>
+    <link rel="stylesheet" href="assets/CSS/Style_recu.css">
 </head>
 <body id="Body">
     
