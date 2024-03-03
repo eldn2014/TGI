@@ -75,6 +75,7 @@ font-family: Mulish,sans-serif;
     position: static;
     display: grid;
     grid-template-columns: 3fr 2fr;
+    max-width: 1200px;
 
 
 }
@@ -249,4 +250,14 @@ font-family: Mulish,sans-serif;
 
 .formulario-digitaveis{
     position: relative;
+}
+
+@media(max-width:840px){
+    .form-wrapper{
+        grid-template-columns: 1fr;
+        height: 100vh;
+    }
+    .lado-informação{
+        display: none;
+    }
 }

@@ -54,10 +54,6 @@ if(isset($_POST['nome_cad']) && isset($_POST['email_cad']) && isset($_POST['senh
                     
                     echo "<script>alert('Falha ao Logar revise seu E-mail e senha e tente novamente.');</script>";}
 
-
-    
-
-
         
         }
 
