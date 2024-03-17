@@ -44,7 +44,7 @@ if(isset($_POST['nome_cad']) && isset($_POST['email_cad']) && isset($_POST['senh
             elseif($quantidade == 0)
                 {
                     $sql_code2 = "INSERT INTO users(Nome, Sobrenome, Senha, Email) VALUES ('$nome','$sobrenome','$senha','$email')";
-                    $mysqli->query($sql_code2) or die("Falha na execução do codigo SQL: ".$mysqli-> error);
+                    $mysqli-> query($sql_code2) or die("Falha na execução do codigo SQL: ".$mysqli-> error);
                     echo "<script>alert('Seu cadastro foi realizado com sucesso, estamos direcionando você para a área de login');
                           window.open('index.php','_self');</script>";
                }

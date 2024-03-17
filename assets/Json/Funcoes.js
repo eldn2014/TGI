@@ -5,3 +5,33 @@ var frm ='<div id="Div-main"><img src="assets/imagens/logo_Kodano.svg" alt="Logo
                 $("#Body").append(frm);
 
 }
+
+const expand_btn = document.querySelector(".expand-btn");
+
+// let activeIndex;
+
+// quando clicado o botão de esconder inclui a classe colapsed ao body
+expand_btn.addEventListener("click", () => {
+  document.body.classList.toggle("collapsed");
+});
+
+
+
+const allLinks = document.querySelectorAll(".sidebar-links a");
+
+// para todos os elementos A dentro da div de links ele ira scanear o elemento a e adicionar um evento de click
+// ele ira varrer e ver qual link foi clicado e adicionar a classe a palavra ACTIVE
+
+allLinks.forEach((elem) => {
+  elem.addEventListener("click", function () {
+    const hrefLinkClick = elem.href;
+
+    allLinks.forEach((link) => {
+      if (link.href == hrefLinkClick) {
+        link.classList.add("active");
+      } else {
+        link.classList.remove("active");
+      }
+    });
+  });
+});

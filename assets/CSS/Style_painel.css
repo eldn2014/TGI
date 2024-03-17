@@ -1,5 +1,360 @@
-.menu {
-    background-color: #630b0b;
-
-
-}
+:root {
+    --primary-color: #191919;
+    --primary: #408CF9;
+    --white: #FFFFFF;
+    --sidebar-primary-hover: #2B2B2F;
+    --sidebar-background: #141318;
+    --background: #a5a5a560;
+    --text-link: #FFFFFF;
+    --expand-button: #408CF9;
+    --logout: #FA7575;
+    --width: 18rem;
+  }
+  
+  body {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 16px;
+    padding: 1rem;
+    height: 100%;
+    background: var(--background);
+    display: grid;
+    grid-template-areas:
+      "side content content"
+      "foot foot foot";
+  
+    grid-template-columns: max-content;
+  
+  }
+  
+  body.collapsed {
+    grid-template-areas:
+      "side content content"
+      "foot foot foot";
+  
+    grid-template-columns: min-content;
+  
+  }
+  
+  .box_content {
+    grid-area: content;
+    background-color: rgba(130, 142, 156, 0.596);
+    width: calc(99%);
+    border: darkblue solid;
+    margin-left: 1%;
+    border-radius: 0.5rem;
+    padding: 15px;
+  }
+  
+  footer {
+    grid-area: foot;
+    width: 100%;
+    height: min-content;
+    text-align: center;
+    font-size: 10px;
+    margin-top: 5px;
+    background-color: darkgray;
+    padding-bottom: 1%;
+    border-radius: 0.2rem;
+    font-weight: bold;
+  }
+  
+  html {
+    height: 100%;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .sidebar {
+    grid-area: side;
+    position: sticky;
+    top: 0;
+    left: 0;
+    min-height: 50rem;
+    height: 100%;
+    padding: 1.5rem 1rem;
+    border-radius: 1.5rem;
+    user-select: none;
+    max-width: 18rem;
+    min-width: 4rem;
+    display: flex;
+    color: var(--white);
+    flex-direction: column;
+    background-color: var(--sidebar-background);
+    transition: max-width 0.2s ease-in-out;
+  }
+  
+  /* faz com que o slide bar recue quando escondido */
+  body.collapsed .sidebar {
+    max-width: 5rem;
+    display: flex;
+  
+  }
+  
+  
+  /* tudo que esta com a classe hide dentro do body ira ser escondido */
+  body.collapsed .hide {
+    position: absolute;
+    visibility: hidden;
+  }
+  
+  
+  
+  /*formatação da div que contem o titulo e o botão de expanção*/
+  .sidebar-top-wrapper {
+    display: flex;
+    background-color: var(--sidebar-background);
+  }
+  
+  /* deixa o alinhamento do conteudo onde esta salvo o nome */
+  .sidebar-top {
+    position: relative;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+    height: 4rem;
+    padding-bottom: 1rem;
+  }
+  
+  /* formatação do texto dentro da tag a que contem o nome */
+  .logo__wrapper {
+    display: flex;
+    align-items: center;
+    color: var(--text-link);
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 1.35rem;
+    padding: 0 0.6rem;
+    gap: 0.75rem;
+  }
+  
+  /* formatação do logo */
+  .logo-small {
+    height: 2rem;
+    width: 2rem;
+    overflow: hidden;
+    object-fit: cover;
+  }
+  
+  
+  /*espaçamentos dos links e o titulo*/
+  .sidebar-links {
+    margin-top: 1rem;
+  }
+  
+  /* todos que são ul e são filhos da classe tem a formatação 
+  sem icone de lista e posicionamento */
+  .sidebar-links ul {
+    list-style-type: none;
+    position: relative;
+    display: flex;
+    row-gap: 0.5rem;
+    flex-direction: column;
+  }
+  
+  /* cor do texto e texto minimo */
+  .sidebar-links li {
+    color: var(--text-link);
+    min-width: 3rem;
+  }
+  
+  /* formatação svg's que estão dentro da li que estão dentro da classe */
+  .sidebar-links li svg {
+    stroke: var(--text-link);
+    width: 1.75rem;
+    height: 1.75rem;
+    min-width: 1.75rem;
+  }
+  
+  /* formata quando o link e passado por cima */
+  .sidebar-links li a:hover {
+    background-color: var(--sidebar-primary-hover);
+  }
+  
+  
+  /* formata os links contidos tendo da li que estão dentro da classe */
+  .sidebar-links li a {
+    color: var(--text-link);
+    width: 100%;
+    padding-left: 0.6rem;
+    font-size: 1.25rem;
+    display: flex;
+    gap: 0.75rem;
+    border-radius: 0.75rem;
+    justify-content: start;
+    align-items: center;
+    min-height: 3.25rem;
+    text-decoration: none;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  /* formata como os textos são formatados apos serem reexibidos */
+  .sidebar-links li a .link {
+    overflow: hidden;
+    white-space: nowrap;
+    animation: fadeIn 0.2s ease-in-out;
+  }
+  
+  /* quando o link clicado é passado por cima */
+  
+  .sidebar-links .active:hover {
+    background-color: var(--expand-button);
+  }
+  
+  /* quando o link esta clicado com o a classe active */
+  .sidebar-links .active {
+    text-decoration: none;
+    background-color: var(--sidebar-primary-hover);
+    color: var(--text-link);
+  }
+  
+  /* quando o link esta clicado fica com e com slibar reduzido a forma fica com cor diferente de branca */
+  .sidebar-links .active svg {
+    stroke: darkblue;
+  }
+  
+  /* Cor do triangulo quando o o slide bar ta recolhido */
+  .tooltip .tooltip__content::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    margin-left: -9px;
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent var(--expand-button) transparent transparent;
+  }
+  
+  /* faz com que a configuração da caixa de legenda seja definida, quando o lidebar esteja no hiden */
+  .tooltip .tooltip__content {
+    visibility: hidden;
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-align: center;
+    border-radius: 6px;
+    padding: 0.35rem 0.75rem;
+    position: absolute;
+    z-index: 1;
+    left: 4.5rem;
+  }
+  
+  /* quando passado a caixa é visualizada */
+  .collapsed .tooltip:hover .tooltip__content {
+    visibility: visible;
+  }
+  
+  /* quando dado tab a caixa é visualizada */
+  .collapsed .tooltip:focus .tooltip__content {
+    visibility: visible;
+  }
+  
+  /*configuração da dvi do perfil*/
+  .sidebar__profile {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-direction: row;
+    color: var(--text-link);
+    overflow-x: hidden;
+    min-height: 2.5rem;
+    margin-top: auto;
+  }
+  
+  /* div da foto do avatar */
+  .avatar__wrapper {
+    position: relative;
+    display: flex;
+  }
+  
+  /* tag img que contem a foto do perfil */
+  .avatar {
+    display: block;
+    width: 3rem;
+    height: 3rem;
+    object-fit: cover;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  /* coloca uma borda quando passado o mouse em cima a foto de perfil */
+  .avatar:hover {
+    border: 3px solid var(--primary);
+  }
+  
+  /* div que contem o nome do perfil */
+  .avatar__name {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    white-space: nowrap;
+  }
+  
+  /* div que contem o nome filha da anterior */
+  .user-name {
+    font-weight: 600;
+    text-align: left;
+    color: var(--text-link);
+  }
+  
+  /* div que contem o email irmã da anterior */
+  .email {
+    color: var(--text-link);
+    font-size: 0.8rem;
+  }
+  
+  /* tag a que possui o logout */
+  .logout {
+    margin-left: auto;
+  }
+  
+  /* icone do botão de logout */
+  .logout svg {
+    color: var(--logout);
+  }
+  
+  /*configuração do botão de expansão */
+  .expand-btn {
+    position: absolute;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    background-color: var(--expand-button);
+    z-index: 2;
+    right: -1rem;
+    width: 2.25rem;
+    height: 2.25rem;
+    border: none;
+    border-radius: 50%;
+  }
+  
+  /* configuração inicial do icone dentro do botãso de expação */
+  .expand-btn svg {
+    transform: rotate(-180deg);
+    stroke: var(--white);
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+  
+  body.collapsed .expand-btn svg {
+    transform: rotate(-360deg);
+  }
+  
+  @keyframes fadeIn {
+    from {
+      width: 4rem;
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 1;
+      width: 100%;
+    }
+  }
