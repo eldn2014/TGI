@@ -84,7 +84,6 @@ if (isset($_POST['email']) || isset($_POST['password'])) {
 <body>
     <div class="form-wrapper">
         <div class="lado-formulario">
-            <!-- <a href="#" title="logo" ><img src="imagens/Logo_Kodano.png" class="logo" alt="0fin"></a> -->
 
             <!-- cria o formulario e login -->
             <form class="meu-form" method="POST">
