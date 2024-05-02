@@ -14,6 +14,8 @@ background: linear-gradient(92.15deg,
             var(--blue-light) 30.13%,
             var(--lado-informação-background) 95.43%);
 font-family: Mulish,sans-serif;
+display: flex;
+justify-content: space-around;
 
 }
 
@@ -74,7 +76,7 @@ font-family: Mulish,sans-serif;
     
     position: static;
     display: grid;
-    grid-template-columns: 3fr 2fr;
+    grid-template-columns: 2fr 1.5fr;
     max-width: 1200px;
 
 
@@ -89,9 +91,11 @@ font-family: Mulish,sans-serif;
 }
 
 .lado-informação{
-    height: auto;
+    height: max-content;
+    width: max-content;
     color: #401b30;
     background: transparent;
+
 }
 
 .lado-informação img{

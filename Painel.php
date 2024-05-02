@@ -1,10 +1,51 @@
 <?php
 include("./assets/PHP/Protect.php");
+include("./assets/PHP/Conexao.php");
+
+    $Controle = intval($_SESSION["idStatus"]);
+    $idconta = intval($_SESSION['ID_conta']);
+  
+  if (isset($_POST['BTN01'])) {
+
+
+
+      if( $Controle > 2){
+
+        $update = "UPDATE users_status SET Status_curso = ( $Controle - 1)  WHERE ID_conta =  $idconta ;";
+        $Select = "SELECT u.ID_conta,e.StatusPossiveis FROM `users_status` u 
+                RIGHT join validação_status as e on e.ID_Status = u.Status_curso
+                where ID_conta = $idconta";
+
+        $mysqli->query($update) or die("Falha na execução do codigo SQL: " . $mysqli->error);
+        $_SESSION["idStatus"]= $Controle - 1;
+
+        $atual = $mysqli->query($Select);
+        $user = $atual->fetch_assoc();
+        $_SESSION["Status_curso"] = $user['StatusPossiveis'];
+
+      }
+
+  }
+  elseif(isset($_POST['BTN02'])){
+
+    $update = "UPDATE users_status SET Status_curso = ( $Controle + 1)  WHERE ID_conta =  $idconta ;";
+        $Select = "SELECT u.ID_conta,e.StatusPossiveis FROM `users_status` u 
+                RIGHT join validação_status as e on e.ID_Status = u.Status_curso
+                where ID_conta = $idconta";
+
+        $mysqli->query($update) or die("Falha na execução do codigo SQL: " . $mysqli->error);
+        $_SESSION["idStatus"]= $Controle + 1;
+
+        $atual = $mysqli->query($Select);
+        $user = $atual->fetch_assoc();
+        $_SESSION["Status_curso"] = $user['StatusPossiveis'];
+
+      }
 
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="PT_br">
 
 <head>
   <meta charset="utf-8">
@@ -13,9 +54,14 @@ include("./assets/PHP/Protect.php");
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/CSS/Style_painel.css">
+  <script src="jquery/jquery-3.5.1.min.js"></script>
+
+
 </head>
 
 <body>
+
+
 
   <nav class="sidebar">
 
@@ -23,7 +69,7 @@ include("./assets/PHP/Protect.php");
 
 
       <div class="sidebar-top">
-        <a href="#" class="logo__wrapper">
+        <a onclick="Limpartudo()" class="logo__wrapper">
           <img src="assets/imagens/logo.png" width="150" height="150" alt="Logo" class="logo-small">
           <span class="hide company-name">
             kodano
@@ -49,7 +95,7 @@ include("./assets/PHP/Protect.php");
 
 
         <li>
-          <a href="#HTMl" title="HTML" class="tooltip">
+          <a onclick="Textos(document.getElementById('Conteudo').className)" title="HTML" class="tooltip">
             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 108.35 122.88" style="enable-background:new 0 0 108.35 122.88" xml:space="preserve">
               <style type="text/css">
                 .st0 {
@@ -177,64 +223,7 @@ include("./assets/PHP/Protect.php");
             <span class="tooltip__content">Javascript</span>
           </a>
         </li>
-        <!-- 
-        
-        <li>
-          <a href="#reports" title="Reports" class="tooltip">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-report-analytics" width="24"
-              height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
-              stroke-linejoin="round" aria-hidden="true">
-              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-              <path d="M9 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-12a2 2 0 0 0 -2 -2h-2" />
-              <path d="M9 3m0 2a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v0a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2z" />
-              <path d="M9 17v-5" />
-              <path d="M12 17v-1" />
-              <path d="M15 17v-3" />
-            </svg>
-            <span class="link hide">Reports</span>
-            <span class="tooltip__content">Reports</span>
-          </a>
-        </li>
-
-
-
-
-        <li>
-          <a href="#industries" title="Industries" class="tooltip">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-building-factory-2" width="24"
-              height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
-              stroke-linejoin="round" aria-hidden="true">
-              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-              <path d="M3 21h18" />
-              <path d="M5 21v-12l5 4v-4l5 4h4" />
-              <path d="M19 21v-8l-1.436 -9.574a.5 .5 0 0 0 -.495 -.426h-1.145a.5 .5 0 0 0 -.494 .418l-1.43 8.582" />
-              <path d="M9 17h1" />
-              <path d="M14 17h1" />
-            </svg>
-            <span class="link hide">Industries</span>
-            <span class="tooltip__content">Industries</span>
-          </a>
-        </li>
-
-
-
-
-        <li>
-          <a href="#settings" title="Settings" class="tooltip">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
-              stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-              <path
-                d="M10.325 4.317c.426 -1.756 2.924 -1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543 -.94 3.31 .826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756 .426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543 -.826 3.31 -2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756 -2.924 1.756 -3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543 .94 -3.31 -.826 -2.37 -2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756 -.426 -1.756 -2.924 0 -3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94 -1.543 .826 -3.31 2.37 -2.37c1 .608 2.296 .07 2.572 -1.065z">
-              </path>
-              <path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"></path>
-            </svg>
-            <span class="link hide">Settings</span>
-            <span class="tooltip__content">Settings</span>
-          </a>
-        </li> -->
-
-
+  
 
       </ul>
 
@@ -278,7 +267,16 @@ include("./assets/PHP/Protect.php");
 
   <div class="box_content">
 
-  <div class="email"><?php echo print_r($_SESSION) ?></div>
+  <h2 id="Titulo"> Bem vindo ao Kodano</h2>
+
+  <div id="Conteudo" class=<?php echo $_SESSION["Status_curso"]; ?>></div>
+
+  <div class="Botoes">
+    <form method="POST" id="Botoes">
+    <button  id="BTN01" name="BTN01" title="Voltar" hidden>voltar</button>
+    <button  id="BTN02" name="BTN02" title="Proximo" hidden>Proximo</button>
+    </form>
+  </div>
 
   </div>
 
@@ -290,7 +288,8 @@ include("./assets/PHP/Protect.php");
     Vinicius Brandstater
   </footer>
 
-  <script src="assets/Json/Funcoes.js"></script>
+
 </body>
+<script src="assets/Json/Funcoes.js"></script>
 
 </html>

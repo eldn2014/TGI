@@ -1,9 +1,9 @@
-:root {
+  :root {
     --primary-color: #191919;
     --primary: #408CF9;
     --white: #FFFFFF;
     --sidebar-primary-hover: #2B2B2F;
-    --sidebar-background: #141318;
+    --sidebar-background: #0b0131;
     --background: #a5a5a560;
     --text-link: #FFFFFF;
     --expand-button: #408CF9;
@@ -11,6 +11,7 @@
     --width: 18rem;
   }
   
+
   body {
     font-family: 'Work Sans', sans-serif;
     font-size: 16px;
@@ -19,22 +20,36 @@
     background: var(--background);
     display: grid;
     grid-template-areas:
+      "topo topo topo"
       "side content content"
       "foot foot foot";
   
     grid-template-columns: max-content;
   
   }
-  
+
   body.collapsed {
     grid-template-areas:
+      "topo topo topo"
       "side content content"
       "foot foot foot";
   
     grid-template-columns: min-content;
   
   }
+
+  .titulo{
+    grid-area: topo;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .titulo img{
+    width: 350px;
+    height: 100px;
+  }
   
+
   .box_content {
     grid-area: content;
     background-color: rgba(130, 142, 156, 0.596);
@@ -43,7 +58,43 @@
     margin-left: 1%;
     border-radius: 0.5rem;
     padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
+
+  .box_content #Titulo{
+    margin-top: 10px;
+    margin-bottom: 40px;
+
+  
+  }
+
+  .box_content #Conteudo{
+    margin-bottom: 20px;
+
+  }
+
+  #Botoes{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    gap: 50px;
+  }
+
+  #Botoes button{
+    width: 100px;
+    height: 30px;
+    color: white;
+    font-weight: bold;
+    background-color: var(--sidebar-background);
+    border: none;
+    border-radius: 5px;
+
+  }
+
+
   
   footer {
     grid-area: foot;

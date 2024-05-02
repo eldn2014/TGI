@@ -43,6 +43,7 @@ if (isset($_POST['email']) || isset($_POST['password'])) {
                 $_SESSION['ID_conta'] = $usuario['ID_conta'];
                 $_SESSION['Nome'] = $usuario['Nome'];
                 $_SESSION['Email'] = $usuario['Email'];
+                $_SESSION['idStatus'] = $usuario['Status_curso'];
                 $_SESSION['Status_curso'] = $usuario['StatusPossiveis'];
 
                 // Direciona para o painel apos o login

@@ -1,10 +1,54 @@
 function montar_form() {
 
-var frm ='<div id="Div-main"><img src="assets/imagens/logo_Kodano.svg" alt="Logo"><h4>Digite a nova senha</h4><form method=\"POST\" class=\"Recu_senha\"><label for=\"senha_atual\">Senha:<input type=\"password\" id=\"senha_atual\" name=\"senha_atual\" placeholder=\"Digite sua nova senha\" title=\Mínimo de 8 caracteres contendo pelo menos 1 letra maiuscula e 1 número\" pattern=\"^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$\" required></label><div ID="div_buttons"><button type=\"submit\" class=\"btn_Atual_senha\"> Enviar </button></div></form></div>';
-                
+var frm ='<div id="Div-main"><img src="assets/imagens/logo_Kodano.svg" alt="Logo"><h4>Digite a nova senha</h4><form method=\"POST\" class=\"Recu_senha\"><label for=\"senha_atual\">Senha:<input type=\"password\" id=\"senha_atual\" name=\"senha_atual\" placeholder=\"Digite sua nova senha\" title=\Mínimo de 8 caracteres contendo pelo menos 1 letra maiuscula e 1 número\" pattern=\"^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$\" required></label><div ID="div_buttons"><button type=\"submit\" class=\"btn_Atual_senha\"> Enviar </button></div></form></div>';        
                 $("#Body").append(frm);
 
 }
+
+
+
+
+function Textos(ind){
+  $.ajax({
+    url: "assets/Json/Perguntas.xml",
+        success: function(xml) {
+        $(xml).find(ind).each(function(){
+          var pergunta = $(this).text();
+
+          $("#Conteudo").text(pergunta)
+          $("#Titulo").text("HTML")
+          $("#BTN02").show()
+          $("#BTN01").show()
+    
+    
+        })
+
+        },error: function() {
+            alert("Alguns arquivos não foram carregados com sucesso, recarregue e tente novamente.");
+        }
+      })
+
+}
+
+
+function Limpartudo(){
+  
+  $("#Conteudo").text("")
+  $("#Titulo").text("Bem Vindo ao Kodano")
+  $("#BTN02").hide()
+  $("#BTN01").hide()
+
+  allLinks.forEach((link) => {
+  link.classList.remove("active")
+  } )
+}
+
+
+
+
+
+
+
 
 const expand_btn = document.querySelector(".expand-btn");
 
