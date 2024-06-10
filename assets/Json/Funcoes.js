@@ -8,27 +8,69 @@ var frm ='<div id="Div-main"><img src="assets/imagens/logo_Kodano.svg" alt="Logo
 
 
 
-function Textos(ind){
-  $.ajax({
-    url: "assets/Json/Perguntas.xml",
-        success: function(xml) {
-        $(xml).find(ind).each(function(){
-          var pergunta = $(this).text();
 
-          $("#Conteudo").text(pergunta)
-          $("#Titulo").text("HTML")
-          $("#BTN02").show()
-          $("#BTN01").show()
-    
-    
-        })
 
-        },error: function() {
-            alert("Alguns arquivos não foram carregados com sucesso, recarregue e tente novamente.");
-        }
-      })
+
+function TextosHTML(controle){
+  
+  if (controle>5){ 
+    $("#Conteudo").text("os modulos de HTML já foram finalizados.")
+    $("#BTN02").hide() 
+    $("#BTN01").hide()   }
+
+  else{
+  $("#Conteudo").text("Deseja continuar?")          
+  $("#Titulo").text("HTML")
+  $("#BTN02").show()
+  $("#BTN01").show()
+  }
 
 }
+
+function TextosCSS(controle){
+
+  if (controle<5){ 
+    $("#Conteudo").text("os modulos de HTML ainda não foram Finalizados")
+    $("#BTN02").hide() 
+    $("#BTN01").hide()  }
+
+  else if (controle>9){ 
+    $("#Conteudo").text("os modulos de CSS já foram finalizados.")   
+    $("#BTN02").hide() 
+    $("#BTN01").hide() }
+
+  else{
+  $("#Conteudo").text("Deseja continuar?")          
+  $("#Titulo").text("CSS")
+  $("#BTN02").show()
+  $("#BTN01").show()
+  }
+}
+
+function TextosJS(controle){
+  if (controle<5){ 
+    $("#Conteudo").text("os modulos de HTML ainda não foram Finalizados")
+    $("#BTN02").hide() 
+    $("#BTN01").hide()  }
+
+  else if (controle>5 && controle<10){ 
+    $("#Conteudo").text("os modulos de CSS ainda não foram Finalizados")
+    $("#BTN02").hide() 
+    $("#BTN01").hide()  }
+
+  else if (controle>13){ 
+    $("#Conteudo").text("os modulos de javaScript já foram finalizados.")
+    $("#BTN02").hide() 
+    $("#BTN01").hide()  }
+  
+  else{
+  $("#Conteudo").text("Deseja continuar?")          
+  $("#Titulo").text("JS")
+  $("#BTN02").show()
+  $("#BTN01").show()
+  }
+}
+
 
 
 function Limpartudo(){

@@ -5,49 +5,48 @@ include("./assets/PHP/Conexao.php");
     $Controle = intval($_SESSION["idStatus"]);
     $idconta = intval($_SESSION['ID_conta']);
   
-  if (isset($_POST['BTN02'])) {
-    if ($Controle <= 2){
-      header("Location: HTML1.php"); }
+  if (isset($_POST['BTN01'])) {
 
-    elseif ($Controle == 3){
-      header("Location: HTML2.php"); }
-      
 
-    elseif ($Controle == 4){
-      header("Location: HTML3.php"); }
 
-    elseif ($Controle == 5){
-      header("Location: HTML4.php"); }
+      if( $Controle > 2){
 
-    elseif ($Controle == 6){
-      header("Location: CSS1.php"); }
-        
-  
-    elseif ($Controle == 7){
-      header("Location: CSS2.php"); }
-  
-    elseif ($Controle == 8){
-      header("Location: CSS3.php"); }
+        $update = "UPDATE users_status SET Status_curso = ( $Controle - 1)  WHERE ID_conta =  $idconta ;";
+        $Select = "SELECT u.ID_conta,e.StatusPossiveis FROM `users_status` u 
+                RIGHT join validação_status as e on e.ID_Status = u.Status_curso
+                where ID_conta = $idconta";
 
-    elseif ($Controle == 9){
-      header("Location: CSS4.php"); }
-    
-    elseif ($Controle == 10){
-      header("Location: js1.php"); }
-          
-    
-    elseif ($Controle == 11){
-      header("Location: js2.php"); }
-    
-    elseif ($Controle == 12){
-      header("Location: js3.php"); }
-  
-    elseif ($Controle == 13){
-      header("Location: js4.php"); }
-  
+        $mysqli->query($update) or die("Falha na execução do codigo SQL: " . $mysqli->error);
+        $_SESSION["idStatus"]= $Controle - 1;
+
+        $atual = $mysqli->query($Select);
+        $user = $atual->fetch_assoc();
+        $_SESSION["Status_curso"] = $user['StatusPossiveis'];
+
+        header("Location: HTML4.php");
+
+      }
+
+      else{ header("Location: painel.php");}
 
   }
+  elseif(isset($_POST['BTN02'])){
 
+    $update = "UPDATE users_status SET Status_curso = ( $Controle + 1)  WHERE ID_conta =  $idconta ;";
+        $Select = "SELECT u.ID_conta,e.StatusPossiveis FROM `users_status` u 
+                RIGHT join validação_status as e on e.ID_Status = u.Status_curso
+                where ID_conta = $idconta";
+
+        $mysqli->query($update) or die("Falha na execução do codigo SQL: " . $mysqli->error);
+        $_SESSION["idStatus"]= $Controle + 1;
+
+        $atual = $mysqli->query($Select);
+        $user = $atual->fetch_assoc();
+        $_SESSION["Status_curso"] = $user['StatusPossiveis'];
+
+        header("Location: CSS2.php");
+
+      }
 
 ?>
 
@@ -56,12 +55,13 @@ include("./assets/PHP/Conexao.php");
 
 <head>
   <meta charset="utf-8">
-  <title>Painel</title>
+  <title>CSS1</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/CSS/Style_painel.css">
   <script src="jquery/jquery-3.5.1.min.js"></script>
+
 
 </head>
 
@@ -101,7 +101,7 @@ include("./assets/PHP/Conexao.php");
 
 
         <li>
-          <a href="#HTML" onclick="TextosHTML(<?php echo $Controle ?>)" title="HTML" class="tooltip">
+          <a title="HTML" class="tooltip">
             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 108.35 122.88" style="enable-background:new 0 0 108.35 122.88" xml:space="preserve">
               <style type="text/css">
                 .st0 {
@@ -134,7 +134,7 @@ include("./assets/PHP/Conexao.php");
 
 
         <li>
-          <a href="#CSS" onclick="TextosCSS(<?php echo $Controle ?>)" title="CSS" class="tooltip">
+          <a href="#CSS" title="CSS" onclick="TextosCSS(<?php echo $Controle ?>)" class="tooltip active" >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 296297 333333" xmlns:xlink="http://www.w3.org/1999/xlink" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd">
               <defs>
                 <linearGradient id="id4" gradientUnits="userSpaceOnUse" x1="54128.7" y1="79355.5" x2="240318" y2="79355.5">
@@ -205,7 +205,7 @@ include("./assets/PHP/Conexao.php");
 
 
         <li>
-          <a href="#Javascript" onclick="TextosJS(<?php echo $Controle ?>)" title="Javascript" class="tooltip">
+          <a href="#Javascript" title="Javascript" onclick="TextosJS(<?php echo $Controle ?>)"class="tooltip">
             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 122.88 122.88" style="enable-background:new 0 0 122.88 122.88" xml:space="preserve">
               <style type="text/css">
                 .st4 {
@@ -273,22 +273,17 @@ include("./assets/PHP/Conexao.php");
 
   <div class="box_content">
 
-  <h2 id="Titulo"> Bem vindo ao Kodano</h2>
+  <h2 id="Titulo"> CSS Modulo 1</h2>
 
   <div id="Conteudo" class=<?php echo $_SESSION["Status_curso"]; ?>> 
   
-    O Kodano é uma plataforma de aprendizagem de programação, com o Kodano Voce pode aprender conceitos basicos de HTML, 
-    CSS e JavaScript.
   </div>
 
   <div class="Botoes">
-
-  <form method="POST" id="Botoes">
-
-    <button  id="BTN01" name="BTN01" title="Voltar" hidden>voltar</button>
-    <button  id="BTN02" name="BTN02" title="Proximo" hidden>IR</button>
-  
-  </form>
+    <form method="POST" id="Botoes">
+    <button  id="BTN01" name="BTN01" title="Voltar" >voltar</button>
+    <button  id="BTN02" name="BTN02" title="Proximo">Proximo</button>
+    </form>
   </div>
 
   </div>

@@ -4,8 +4,9 @@
     --white: #FFFFFF;
     --sidebar-primary-hover: #2B2B2F;
     --sidebar-background: #0b0131;
-    --background: #a5a5a560;
+    --background: #482de4de;
     --text-link: #FFFFFF;
+    --background-div: #dddddd;
     --expand-button: #408CF9;
     --logout: #FA7575;
     --width: 18rem;
@@ -52,7 +53,7 @@
 
   .box_content {
     grid-area: content;
-    background-color: rgba(130, 142, 156, 0.596);
+    background-color: var(--background-div);
     width: calc(99%);
     border: darkblue solid;
     margin-left: 1%;
