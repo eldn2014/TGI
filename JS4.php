@@ -23,7 +23,7 @@ include("./assets/PHP/Conexao.php");
         $user = $atual->fetch_assoc();
         $_SESSION["Status_curso"] = $user['StatusPossiveis'];
 
-        header("Location: CSS2.php");
+        header("Location: JS3.php");
 
       }
 
@@ -44,7 +44,7 @@ include("./assets/PHP/Conexao.php");
         $user = $atual->fetch_assoc();
         $_SESSION["Status_curso"] = $user['StatusPossiveis'];
 
-        header("Location: CSS4.php");
+        header("Location: Fim.php");
 
       }
 
@@ -55,7 +55,7 @@ include("./assets/PHP/Conexao.php");
 
 <head>
   <meta charset="utf-8">
-  <title>CSS3</title>
+  <title>JS4</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
@@ -101,7 +101,7 @@ include("./assets/PHP/Conexao.php");
 
 
         <li>
-          <a title="HTML" onclick="TextosHTML(<?php echo $Controle ?>)" class="tooltip">
+          <a title="HTML"  onclick="TextosHTML(<?php echo $Controle ?>)" class="tooltip">
             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 108.35 122.88" style="enable-background:new 0 0 108.35 122.88" xml:space="preserve">
               <style type="text/css">
                 .st0 {
@@ -273,7 +273,7 @@ include("./assets/PHP/Conexao.php");
 
   <div class="box_content">
 
-  <h2 id="Titulo"> CSS Modulo 3</h2>
+  <h2 id="Titulo"> JavaScript Modulo 4</h2>
 
   <div id="Conteudo" class=<?php echo $_SESSION["Status_curso"]; ?>> 
   

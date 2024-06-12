@@ -7,7 +7,10 @@ var frm ='<div id="Div-main"><img src="assets/imagens/logo_Kodano.svg" alt="Logo
 
 
 
+function exibeB(){
+  $("#BTN03").show()
 
+}
 
 
 
