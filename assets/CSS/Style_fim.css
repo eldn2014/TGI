@@ -1,0 +1,12 @@
+#links_fim{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#links_fim a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+
+}

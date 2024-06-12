@@ -134,7 +134,7 @@ include("./assets/PHP/Conexao.php");
 
 
         <li>
-          <a href="#CSS" title="CSS" onclick="TextosCSS(<?php echo $Controle ?>)" class="tooltip active" >
+          <a href="#CSS" title="CSS" onclick="TextosCSS(<?php echo $Controle ?>)" class="tooltip " >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 296297 333333" xmlns:xlink="http://www.w3.org/1999/xlink" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd">
               <defs>
                 <linearGradient id="id4" gradientUnits="userSpaceOnUse" x1="54128.7" y1="79355.5" x2="240318" y2="79355.5">
@@ -205,7 +205,7 @@ include("./assets/PHP/Conexao.php");
 
 
         <li>
-          <a href="#Javascript" title="Javascript" onclick="TextosJS(<?php echo $Controle ?>)"class="tooltip">
+          <a href="#Javascript" title="Javascript" onclick="TextosJS(<?php echo $Controle ?>)"class="tooltip active">
             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 122.88 122.88" style="enable-background:new 0 0 122.88 122.88" xml:space="preserve">
               <style type="text/css">
                 .st4 {

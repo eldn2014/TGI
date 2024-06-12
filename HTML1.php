@@ -60,6 +60,7 @@ include("./assets/PHP/Conexao.php");
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/CSS/Style_painel.css">
+  <link rel="stylesheet" href="assets/CSS/Style_teste.css">
   <script src="jquery/jquery-3.5.1.min.js"></script>
 
 
@@ -276,13 +277,33 @@ include("./assets/PHP/Conexao.php");
   <h2 id="Titulo"> HTML Modulo 1 </h2>
 
   <div id="Conteudo" class=<?php echo $_SESSION["Status_curso"]; ?>> 
-  
+
+    <h3>O que é o HTML?</h3>
+    <br>
+    <p>O HMTL é a Linguagem usada para criar sites na internet, aos contrario do que muitos pensam, o HTML é uma linguagem de marcação, isso significa que não há logica de calculo em sua escrita, pois com HTML não dizemos que codificamos em HTML, mas sim escrevemos o HTML. O html ou linguagem de marcação de texto, funciona similar a um bloco de lego, onde cada peça de lego no HTML recebe o nome de "TAG", essas tags são agrupadas de formas logicas para montar o site, nos aprofundaremos mais tarde nesse conceito &#128521. Agora vamos a um pequeno teste de Fixação.</p>
+
+   <br><br><br>
+
+   <div class="teste">
+    <h3> Selecione a opção correta</h3>
+    <p>O que o HTML é?</p>
+
+    <br><br><br>
+
+    <div class="BTN_teste">
+      <button id="btn01">Uma linguagem de programação usada em banco de dados.</button>
+      <button id="btn02">Uma linguagem de marcação usada para contruir Sites.</button>
+      <button id="btn03">Uma linguagem de marcação usada para android.</button>
+    </div>
+
+    </div>
+
   </div>
 
   <div class="Botoes">
     <form method="POST" id="Botoes">
-    <button  id="BTN01" name="BTN01" title="Voltar" >voltar</button>
-    <button  id="BTN02" name="BTN02" title="Proximo">Proximo</button>
+    <button  id="BTN01" name="BTN01" title="Voltar" hidden >voltar</button>
+    <button  id="BTN02" name="BTN02" title="Proximo" hidden>Proximo</button>
     </form>
   </div>
 
@@ -299,5 +320,6 @@ include("./assets/PHP/Conexao.php");
 
 </body>
 <script src="assets/Json/Funcoes.js"></script>
+<script src="assets/Json/teste.js"></script>
 
 </html>

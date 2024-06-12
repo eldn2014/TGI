@@ -5,10 +5,8 @@ include("./assets/PHP/Conexao.php");
     $Controle = intval($_SESSION["idStatus"]);
     $idconta = intval($_SESSION['ID_conta']);
 
-    if($Controle == 14){
-      echo "<script>exibeB()</script>";
-
-    }
+    if (isset($_POST['BTN03'])) {
+      header("Location: Fim.php");}
   
   if (isset($_POST['BTN02'])) {
     if ($Controle <= 2){
@@ -283,6 +281,8 @@ include("./assets/PHP/Conexao.php");
   
     O Kodano é uma plataforma de aprendizagem de programação, com o Kodano Voce pode aprender conceitos basicos de HTML, 
     CSS e JavaScript.
+    <br><br>
+
   </div>
 
   <div class="Botoes">
@@ -291,7 +291,8 @@ include("./assets/PHP/Conexao.php");
 
     <button  id="BTN01" name="BTN01" title="Voltar" hidden>voltar</button>
     <button  id="BTN02" name="BTN02" title="Proximo" hidden>IR</button>
-    <button  id="BTN03" hidden >FIM</button>
+    <?php
+      if($Controle == 14){echo "<button id=\"BTN03\" name=\"BTN03\" >Fim</button>";}?>
   
   </form>
   </div>

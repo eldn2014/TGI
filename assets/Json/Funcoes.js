@@ -7,11 +7,10 @@ var frm ='<div id="Div-main"><img src="assets/imagens/logo_Kodano.svg" alt="Logo
 
 
 
+
 function exibeB(){
-  $("#BTN03").show()
-
+  window.open("Fim.php")
 }
-
 
 
 function TextosHTML(controle){
@@ -19,13 +18,15 @@ function TextosHTML(controle){
   if (controle>5){ 
     $("#Conteudo").text("os modulos de HTML já foram finalizados.")
     $("#BTN02").hide() 
-    $("#BTN01").hide()   }
+    $("#BTN01").hide()
+    $("#BTN03").hide()    }
 
   else{
   $("#Conteudo").text("Deseja continuar?")          
   $("#Titulo").text("HTML")
   $("#BTN02").show()
   $("#BTN01").show()
+  $("#BTN03").hide() 
   }
 
 }
@@ -35,18 +36,21 @@ function TextosCSS(controle){
   if (controle<5){ 
     $("#Conteudo").text("os modulos de HTML ainda não foram Finalizados")
     $("#BTN02").hide() 
-    $("#BTN01").hide()  }
+    $("#BTN01").hide()
+    $("#BTN03").hide()   }
 
   else if (controle>9){ 
     $("#Conteudo").text("os modulos de CSS já foram finalizados.")   
     $("#BTN02").hide() 
-    $("#BTN01").hide() }
+    $("#BTN01").hide()
+    $("#BTN03").hide()  }
 
   else{
   $("#Conteudo").text("Deseja continuar?")          
   $("#Titulo").text("CSS")
   $("#BTN02").show()
   $("#BTN01").show()
+  $("#BTN03").hide() 
   }
 }
 
@@ -54,23 +58,27 @@ function TextosJS(controle){
   if (controle<5){ 
     $("#Conteudo").text("os modulos de HTML ainda não foram Finalizados")
     $("#BTN02").hide() 
-    $("#BTN01").hide()  }
+    $("#BTN01").hide()
+    $("#BTN03").hide()   }
 
   else if (controle>5 && controle<10){ 
     $("#Conteudo").text("os modulos de CSS ainda não foram Finalizados")
     $("#BTN02").hide() 
-    $("#BTN01").hide()  }
+    $("#BTN01").hide()
+    $("#BTN03").hide()  }
 
   else if (controle>13){ 
     $("#Conteudo").text("os modulos de javaScript já foram finalizados.")
     $("#BTN02").hide() 
-    $("#BTN01").hide()  }
+    $("#BTN01").hide()
+    $("#BTN03").hide()  }
   
   else{
   $("#Conteudo").text("Deseja continuar?")          
   $("#Titulo").text("JS")
   $("#BTN02").show()
   $("#BTN01").show()
+  $("#BTN03").hide()
   }
 }
 
@@ -82,6 +90,7 @@ function Limpartudo(){
   $("#Titulo").text("Bem Vindo ao Kodano")
   $("#BTN02").hide()
   $("#BTN01").hide()
+  $("#BTN03").hide()
 
   allLinks.forEach((link) => {
   link.classList.remove("active")

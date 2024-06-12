@@ -7,32 +7,7 @@ include("./assets/PHP/Conexao.php");
   
   if (isset($_POST['BTN01'])) {
 
-
-
-      if( $Controle > 2){
-
-        $update = "UPDATE users_status SET Status_curso = ( $Controle - 1)  WHERE ID_conta =  $idconta ;";
-        $Select = "SELECT u.ID_conta,e.StatusPossiveis FROM `users_status` u 
-                RIGHT join validação_status as e on e.ID_Status = u.Status_curso
-                where ID_conta = $idconta";
-
-        $mysqli->query($update) or die("Falha na execução do codigo SQL: " . $mysqli->error);
-        $_SESSION["idStatus"]= $Controle - 1;
-
-        $atual = $mysqli->query($Select);
-        $user = $atual->fetch_assoc();
-        $_SESSION["Status_curso"] = $user['StatusPossiveis'];
-
-        header("Location: JS4.php");
-
-      }
-
-      else{ header("Location: painel.php");}
-
-  }
-  elseif(isset($_POST['BTN02'])){
-
-      }
+    header("Location: painel.php");}
 
 ?>
 
@@ -46,6 +21,7 @@ include("./assets/PHP/Conexao.php");
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/CSS/Style_painel.css">
+  <link rel="stylesheet" href="assets/CSS/Style_fim.css">
   <script src="jquery/jquery-3.5.1.min.js"></script>
 
 
@@ -87,7 +63,7 @@ include("./assets/PHP/Conexao.php");
 
 
         <li>
-          <a title="HTML"  onclick="TextosHTML(<?php echo $Controle ?>)" class="tooltip">
+          <a title="HTML"  onclick="TextosHTML(<?php echo $Controle ?>)" class="tooltip active">
             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 108.35 122.88" style="enable-background:new 0 0 108.35 122.88" xml:space="preserve">
               <style type="text/css">
                 .st0 {
@@ -191,7 +167,7 @@ include("./assets/PHP/Conexao.php");
 
 
         <li>
-          <a href="#Javascript" title="Javascript" onclick="TextosJS(<?php echo $Controle ?>)"class="tooltip">
+          <a href="#Javascript" title="Javascript" onclick="TextosJS(<?php echo $Controle ?>)"class="tooltip active">
             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 122.88 122.88" style="enable-background:new 0 0 122.88 122.88" xml:space="preserve">
               <style type="text/css">
                 .st4 {
@@ -262,13 +238,24 @@ include("./assets/PHP/Conexao.php");
   <h2 id="Titulo"> Fim do Curso</h2>
 
   <div id="Conteudo" class=<?php echo $_SESSION["Status_curso"]; ?>> 
+
+    <h3>Seu curso Introdutorio foi finalizado com sucesso!</h3>
+    <img src="assets/imagens/GIF-Simpsons.gif" width="400" height="300">
+    <p>Para saber mais você pode procurar nos seguintes sites</p>
+    <br>
+    
+    <ul id="links_fim">
+      <a href="https://www.w3schools.com/"> w3schools</a>
+      <a href="https://www.geeksforgeeks.org/">geeksforgeeks</a>
+      <a href="https://stackoverflow.com/">stackoverflow</a>
+    
+    </ul>
   
   </div>
 
   <div class="Botoes">
     <form method="POST" id="Botoes">
     <button  id="BTN01" name="BTN01" title="Voltar" >voltar</button>
-    <button  id="BTN02" name="BTN02" title="Proximo">Proximo</button>
     </form>
   </div>
 

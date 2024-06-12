@@ -1,0 +1,33 @@
+:root {
+
+    --fundo: #0b0131;
+    --LETRAS : rgb(231, 231, 231);
+    --teste: #019601;
+
+}
+
+
+
+.BTN_teste{
+    display: inline-flex;
+    justify-content: space-around;
+    align-content: center;
+    width: fit-content;
+
+}
+
+.collapsed .BTN_teste {
+    display: inline-flex;
+    justify-content: space-around;
+    align-content: center;
+    width: fit-content;
+
+
+}
+
+.BTN_teste button{
+    width: 30%;
+    background-color:var(--fundo) ;
+    color: var(--LETRAS);
+
+}
