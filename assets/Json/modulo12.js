@@ -88,27 +88,7 @@ botao8.addEventListener('click', function() {
     $("#btn07").hide()
     $("#btn08").hide()
     mudarcor("pergunta4")
-    $(".pergunta5").show()
+    $(".Botoes").show()
 
 
 });
-
-
-function pegarTexto() {
-
-    var texto_resp1 = document.getElementById('caixa_input').value;
-
-    if(texto_resp1 == "<h3 id=\"titulo\"></h3>"){
-        mudarcor("pergunta5")
-        alert("resposta certa")
-        $("#btn09").hide()
-        $(".Botoes").show()
-        
-    }
-    else{
-        alert("resposta Incorreta tente novamente")
-    }
-
-
-
-}

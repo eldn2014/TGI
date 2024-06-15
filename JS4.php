@@ -60,6 +60,7 @@ include("./assets/PHP/Conexao.php");
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/CSS/Style_painel.css">
+  <link rel="stylesheet" href="assets/CSS/Style_teste.css">
   <script src="jquery/jquery-3.5.1.min.js"></script>
 
 
@@ -275,11 +276,34 @@ include("./assets/PHP/Conexao.php");
 
   <h2 id="Titulo"> JavaScript Modulo 4</h2>
 
-  <div id="Conteudo" class=<?php echo $_SESSION["Status_curso"]; ?>> 
+  <div id="Conteudo" class=<?php echo $_SESSION["Status_curso"]; ?>>
+    
+  <p class="pergunta1">O metodo em JS não precisa de nome?</p><br> <br>
+    <p class="pergunta2" hidden>O JavaScript é uma linguagem de baixo nivel?</p><br> <br>
+    <p class="pergunta3" hidden>qual das seguintes é um metodo?</p><br> <br>
+    <p class="pergunta4" hidden>Onde o JS é executado?</p><br> <br>
+
+
+    <h3 id="titulo"></h3>
+
+  <div class="BTN_teste">
+  <button id="btn01" class="pergunta1"> Verdadeiro</button>
+  <button id="btn02"  class="pergunta1"> Falso</button>
+
+  <button id="btn03" class="pergunta2" hidden>Não</button>
+  <button id="btn04" class="pergunta2" hidden>Sim</button>
+
+  <button id="btn05" class="pergunta3" hidden>concat():</button>
+  <button id="btn06" class="pergunta3" hidden>function Meu_nome{}</button>
+
+  <button id="btn07" class="pergunta4" hidden>sistema operacional</button>
+  <button id="btn08" class="pergunta4" hidden>Diretamente no Navegador</button>
+
+  </div> 
   
   </div>
 
-  <div class="Botoes">
+  <div class="Botoes" hidden>
     <form method="POST" id="Botoes">
     <button  id="BTN01" name="BTN01" title="Voltar" >voltar</button>
     <button  id="BTN02" name="BTN02" title="Proximo">Proximo</button>
@@ -299,5 +323,6 @@ include("./assets/PHP/Conexao.php");
 
 </body>
 <script src="assets/Json/Funcoes.js"></script>
+<script src="assets/Json/modulo12.js"></script>
 
 </html>
