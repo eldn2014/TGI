@@ -3,6 +3,7 @@ var botao1 = document.getElementById('btn01');
 var botao2 = document.getElementById('btn02');
 var botao3 = document.getElementById('btn03');
 
+
 // Adiciona um ouvinte de evento de clique a cada botão
 botao1.addEventListener('click', function() {
     alert("resposta Incorreta, tente novamente")

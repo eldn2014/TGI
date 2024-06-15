@@ -2,9 +2,9 @@
 
     --fundo: #0b0131;
     --LETRAS : rgb(231, 231, 231);
-    --teste: #019601;
 
 }
+
 
 
 
@@ -12,7 +12,8 @@
     display: inline-flex;
     justify-content: space-around;
     align-content: center;
-    width: fit-content;
+    width: 600px;
+    padding: 10px;
 
 }
 
@@ -21,13 +22,16 @@
     justify-content: space-around;
     align-content: center;
     width: fit-content;
+    width: 600px;
+    padding: 10px;
 
 
 }
 
 .BTN_teste button{
-    width: 30%;
+    width: 120px;
     background-color:var(--fundo) ;
     color: var(--LETRAS);
+
 
 }

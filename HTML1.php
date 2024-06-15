@@ -320,6 +320,6 @@ include("./assets/PHP/Conexao.php");
 
 </body>
 <script src="assets/Json/Funcoes.js"></script>
-<script src="assets/Json/teste.js"></script>
+<script src="assets/Json/modulo1.js"></script>
 
 </html>

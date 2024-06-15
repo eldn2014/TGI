@@ -60,6 +60,7 @@ include("./assets/PHP/Conexao.php");
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/CSS/Style_painel.css">
+  <link rel="stylesheet" href="assets/CSS/Style_teste.css">
   <script src="jquery/jquery-3.5.1.min.js"></script>
 
 
@@ -276,13 +277,54 @@ include("./assets/PHP/Conexao.php");
   <h2 id="Titulo"> JavaScript Modulo 2</h2>
 
   <div id="Conteudo" class=<?php echo $_SESSION["Status_curso"]; ?>> 
-  
+  <div id="explicação">
+
+  <h3>O que são metodos?</h3>
+    <br><p>
+    Métodos em JavaScript referem-se a funções que estão associadas a objetos. Eles permitem que você execute ações específicas nos dados contidos nos objetos ou em torno deles. Em termos mais gerais de programação orientada a objetos (POO), um método é uma função que pertence a uma classe ou a um objeto.<br><br>
+
+    Para declarar uma função no JavaScript, usamos a seguinte arquitetura: <br>
+    <Strong>Function</Strong>: nome do sistema para definir uma função. <br>
+    <strong>nome_da_função:</strong> nome escolhido por você para a função. <br>
+    <strong>():</strong> As aspas definem se essa função terá parametro ou não. <br>
+    <strong>{}:</strong> As chaves definem o começo de onde começa a função e onde termina.
+    </p> 
+    <br>
+
+    </div>
+
+    <div id="div_teste" hidden>
+    <h3>Agora vamos ao teste.</h3>
+    <br><br>
+    <p>Na caixa codifique apenas a estrutura da função soma em javaScript</p>
+    <input type="text" id="caixa_input1">
+    <br><br>
+
+    <p>Na caixa abaixo codifique apenas a estrutura de uma função dividir com parametro chamado numerador.</p>
+    <input type="text" id="caixa_input2">
+    <br> <br>
+
+
+    </div>
+ 
+
+    <div class="BTN_teste">
+      <br> <br>
+      <button id="btn01">proximo.</button>
+      <button id="btn02" onclick="pegarTexto()" hidden> verificar</button>
+    </div>
+
+
+
+
+   <br><br><br>
+
   </div>
 
   <div class="Botoes">
     <form method="POST" id="Botoes">
-    <button  id="BTN01" name="BTN01" title="Voltar" >voltar</button>
-    <button  id="BTN02" name="BTN02" title="Proximo">Proximo</button>
+    <button  id="BTN01" name="BTN01" title="Voltar" hidden >voltar</button>
+    <button  id="BTN02" name="BTN02" title="Proximo" hidden>Proximo</button>
     </form>
   </div>
 
@@ -299,5 +341,6 @@ include("./assets/PHP/Conexao.php");
 
 </body>
 <script src="assets/Json/Funcoes.js"></script>
+<script src="assets/Json/modulo10.js"></script>
 
 </html>

@@ -60,6 +60,7 @@ include("./assets/PHP/Conexao.php");
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/CSS/Style_painel.css">
+  <link rel="stylesheet" href="assets/CSS/Style_teste.css">
   <script src="jquery/jquery-3.5.1.min.js"></script>
 
 
@@ -276,10 +277,34 @@ include("./assets/PHP/Conexao.php");
   <h2 id="Titulo"> HTML Modulo 4</h2>
 
   <div id="Conteudo" class=<?php echo $_SESSION["Status_curso"]; ?>> 
-  
-  </div>
 
-  <div class="Botoes">
+    <p class="pergunta1">O src é uma tag?</p><br> <br>
+    <p class="pergunta2" hidden>O HTML é uma linguagem de marcação ou de programação?</p><br> <br>
+    <p class="pergunta3" hidden>qual das seguintes opções é uma tag?</p><br> <br>
+    <p class="pergunta4" hidden>Para que serve as Tags?</p><br> <br>
+    <label class="pergunta5" hidden>Escreva uma tag h3 com um ID escrito titulo</label>
+    <input type="text" class="pergunta5" id="caixa_input"  hidden><br> <br>
+
+    <h3 id="titulo"></h3>
+
+  <div class="BTN_teste">
+  <button id="btn01" class="pergunta1"> Verdadeiro</button>
+  <button id="btn02"  class="pergunta1"> Falso</button>
+
+  <button id="btn03" class="pergunta2" hidden>Marcação</button>
+  <button id="btn04" class="pergunta2" hidden>Programação</button>
+
+  <button id="btn05" class="pergunta3" hidden>link</button>
+  <button id="btn06" class="pergunta3" hidden>href</button>
+
+  <button id="btn07" class="pergunta4" hidden>fazer calculos complexos</button>
+  <button id="btn08" class="pergunta4" hidden>Estruturar o codigo e orientar</button>
+
+  <button id="btn09" class="pergunta5" onclick="pegarTexto()" hidden>verificar</button>
+
+  </div>
+  </div>
+  <div class="Botoes" hidden>
     <form method="POST" id="Botoes">
     <button  id="BTN01" name="BTN01" title="Voltar" >voltar</button>
     <button  id="BTN02" name="BTN02" title="Proximo">Proximo</button>
@@ -299,5 +324,6 @@ include("./assets/PHP/Conexao.php");
 
 </body>
 <script src="assets/Json/Funcoes.js"></script>
+<script src="assets/Json/modulo4.js"></script>
 
 </html>

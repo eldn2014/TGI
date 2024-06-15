@@ -60,6 +60,7 @@ include("./assets/PHP/Conexao.php");
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/CSS/Style_painel.css">
+  <link rel="stylesheet" href="assets/CSS/Style_teste.css">
   <script src="jquery/jquery-3.5.1.min.js"></script>
 
 
@@ -277,9 +278,35 @@ include("./assets/PHP/Conexao.php");
 
   <div id="Conteudo" class=<?php echo $_SESSION["Status_curso"]; ?>> 
   
+  <p class="pergunta1">A propriedade e o seletor atuam juntos e servem para a mesma coisa?</p><br> <br>
+    <p class="pergunta2" hidden>O CSS é uma linguagem de estilização ou de marcação?</p><br> <br>
+    <p class="pergunta3" hidden>qual das seguintes opções é um seletor?</p><br> <br>
+    <p class="pergunta4" hidden>Para que serve o CSS?</p><br> <br>
+    <label class="pergunta5" hidden>Escreva um seletor de classe de uma classe "IO90" e na propriedade coloque a cor blue</label>
+    <input type="text" class="pergunta5" id="caixa_input"  hidden><br> <br>
+
+    <h3 id="titulo"></h3>
+
+  <div class="BTN_teste">
+  <button id="btn01" class="pergunta1"> Verdadeiro</button>
+  <button id="btn02"  class="pergunta1"> Falso</button>
+
+  <button id="btn03" class="pergunta2" hidden>Estilização</button>
+  <button id="btn04" class="pergunta2" hidden>Marcação</button>
+
+  <button id="btn05" class="pergunta3" hidden>#ID92{}</button>
+  <button id="btn06" class="pergunta3" hidden>font_size: 15px</button>
+
+  <button id="btn07" class="pergunta4" hidden>Para controlar acesso e estilo de HTML</button>
+  <button id="btn08" class="pergunta4" hidden>Em resumo server apenas para estilizar o HTML.</button>
+
+  <button id="btn09" class="pergunta5" onclick="pegarTexto()" hidden>verificar</button>
+
   </div>
 
-  <div class="Botoes">
+  </div>
+
+  <div class="Botoes" hidden>
     <form method="POST" id="Botoes">
     <button  id="BTN01" name="BTN01" title="Voltar" >voltar</button>
     <button  id="BTN02" name="BTN02" title="Proximo">Proximo</button>
@@ -299,5 +326,6 @@ include("./assets/PHP/Conexao.php");
 
 </body>
 <script src="assets/Json/Funcoes.js"></script>
+<script src="assets/Json/modulo8.js"></script>
 
 </html>

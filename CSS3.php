@@ -60,6 +60,7 @@ include("./assets/PHP/Conexao.php");
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/CSS/Style_painel.css">
+  <link rel="stylesheet" href="assets/CSS/Style_teste.css">
   <script src="jquery/jquery-3.5.1.min.js"></script>
 
 
@@ -276,11 +277,38 @@ include("./assets/PHP/Conexao.php");
   <h2 id="Titulo"> CSS Modulo 3</h2>
 
   <div id="Conteudo" class=<?php echo $_SESSION["Status_curso"]; ?>> 
-  
+  <h3>O que são Propriedades?</h3>
+    <br>
+    <p>As propriedades do CSS são ferramentas fundamentais para estilizar e posicionar elementos HTML em páginas web. Cada propriedade controla aspectos específicos como cor, tamanho, layout e efeitos visuais. Elas são aplicadas usando seletores CSS como tags, classes ou IDs. As propriedades seguem uma sintaxe padrão de nome seguido por dois pontos e valor, dentro de chaves. Há diferentes tipos de propriedades, incluindo cor, texto, layout e posicionamento. Elas obedecem às regras de cascata e especificidade, onde a última regra aplicada ou a mais específica prevalece.
+    </p>
+
+   <br><br><br>
+
+   <div class="teste">
+    <h3> Selecione a opção correta</h3>
+    <p class="p1">O que são propriedades?</p>
+    <p class="p1" style="color: green; font-weight: bold" hidden> Você acertou!!</p> <br>
+
+    <p class="p2 p" hidden>É verdade que dependendo da propriedade posso mudar a tag?</p>
+    <p class="p2" style="color: green; font-weight: bold" hidden> Você acertou!!</p> <br>
+
+    <br><br><br>
+
+    <div class="BTN_teste">
+      <button id="btn01">é uma forma diferente de chamar o seletor.</button>
+      <button id="btn02">são valores são atributos que são acrescidos no Seletor.</button>
+      <button id="btn03">são ferramentas fundamentais para controlar aspectos específicos como cor, tamanho, layout e efeitos visuais </button>
+
+      <button id="btn04" hidden>Verdadeiro</button>
+      <button id="btn05" hidden>Falso</button>
+    </div>
+
+    </div>
+
   </div>
 
-  <div class="Botoes">
-    <form method="POST" id="Botoes">
+  <div class="Botoes"hidden>
+    <form method="POST" id="Botoes" >
     <button  id="BTN01" name="BTN01" title="Voltar" >voltar</button>
     <button  id="BTN02" name="BTN02" title="Proximo">Proximo</button>
     </form>
@@ -299,5 +327,6 @@ include("./assets/PHP/Conexao.php");
 
 </body>
 <script src="assets/Json/Funcoes.js"></script>
+<script src="assets/Json/modulo7.js"></script>
 
 </html>

@@ -60,6 +60,7 @@ include("./assets/PHP/Conexao.php");
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/CSS/Style_painel.css">
+  <link rel="stylesheet" href="assets/CSS/Style_teste.css">
   <script src="jquery/jquery-3.5.1.min.js"></script>
 
 
@@ -276,13 +277,51 @@ include("./assets/PHP/Conexao.php");
   <h2 id="Titulo"> CSS Modulo 2</h2>
 
   <div id="Conteudo" class=<?php echo $_SESSION["Status_curso"]; ?>> 
-  
+  <div id="explicação">
+
+  <h3>O que uma seletor?</h3>
+    <br>
+    <p>Seletores em CSS são padrões que permitem selecionar elementos HTML para aplicar estilos específicos. Eles incluem seletores de tipo (como p para parágrafos), seletores de classe (como .destaque para elementos com a classe "destaque"), seletores de ID (como #header para um elemento com ID "header"), seletores de atributo (como input[type="text"] para inputs do tipo texto), seletores de descendência (como .container p para parágrafos dentro de elementos com a classe "container"), entre outros. <br> <br>
+    <strong>seletor de tipo:</strong> h1{....} | nesse tipo de seletor pegamos todas as tag h1 do HTML. <br>
+    <strong>seletor de id:</strong> #id01{...} | Nesse tipo de Seletor, pegamos todas as tags que possuem o atributo id="id01"<br>
+    <strong>seletor de classe:</strong> .classe01{....} | nesse tipo de seletor, pegamos todas as tags que possuem o atributo class="classe01"
+    </p>
+    <br>
+
+    </div>
+
+    <div id="div_teste" hidden>
+    <h3>Agora vamos ao teste.</h3>
+    <br><br>
+    <p>Na caixa abaixo escreva um seletor de paragráfo</p>
+    <input type="text" id="caixa_input1">
+    <br><br>
+
+    <p>Na caixa abaixo escreva um seletor de classe da segunte tag"&lt;div class="ip01"&gt;  &lt;/div&gt;</p>
+    <input type="text" id="caixa_input2">
+    <br> <br>
+
+
+    </div>
+ 
+
+    <div class="BTN_teste">
+      <br> <br>
+      <button id="btn01">proximo.</button>
+      <button id="btn02" onclick="pegarTexto()" hidden> verificar</button>
+    </div>
+
+
+
+
+   <br><br><br>
+
   </div>
 
   <div class="Botoes">
     <form method="POST" id="Botoes">
-    <button  id="BTN01" name="BTN01" title="Voltar" >voltar</button>
-    <button  id="BTN02" name="BTN02" title="Proximo">Proximo</button>
+    <button  id="BTN01" name="BTN01" title="Voltar" hidden>voltar</button>
+    <button  id="BTN02" name="BTN02" title="Proximo" hidden>Proximo</button>
     </form>
   </div>
 
@@ -299,5 +338,6 @@ include("./assets/PHP/Conexao.php");
 
 </body>
 <script src="assets/Json/Funcoes.js"></script>
+<script src="assets/Json/modulo6.js"></script>
 
 </html>

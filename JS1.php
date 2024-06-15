@@ -60,6 +60,7 @@ include("./assets/PHP/Conexao.php");
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/CSS/Style_painel.css">
+  <link rel="stylesheet" href="assets/CSS/Style_teste.css">
   <script src="jquery/jquery-3.5.1.min.js"></script>
 
 
@@ -277,12 +278,33 @@ include("./assets/PHP/Conexao.php");
 
   <div id="Conteudo" class=<?php echo $_SESSION["Status_curso"]; ?>> 
   
+  <h3>O que é o JavaScript?</h3>
+    <br>
+    <p>
+      JavaScript é uma linguagem de programação utilizada principalmente para criar interatividade em páginas web. Executada diretamente nos navegadores dos usuários, permite atualizações dinâmicas de conteúdo. Além do desenvolvimento web, JavaScript é aplicado em diversos campos, como desenvolvimento de aplicativos móveis e jogos. É uma linguagem de alto nível, suportando múltiplos estilos de programação e amplamente estendida através de bibliotecas e frameworks.</p>
+
+   <br><br><br>
+
+   <div class="teste">
+    <h3> Selecione a opção correta</h3>
+    <p>O que o JavaScript é?</p>
+
+    <br><br><br>
+
+    <div class="BTN_teste">
+      <button id="btn01">Uma linguagem de programação usada apenas em Computadores.</button>
+      <button id="btn02">Uma linguagem de programação de alto nivel, usada para criar interatividade com paginas web.</button>
+      <button id="btn03">Uma linguagem de programação para celulares.</button>
+    </div>
+
+    </div>
+
   </div>
 
   <div class="Botoes">
     <form method="POST" id="Botoes">
-    <button  id="BTN01" name="BTN01" title="Voltar" >voltar</button>
-    <button  id="BTN02" name="BTN02" title="Proximo">Proximo</button>
+    <button  id="BTN01" name="BTN01" title="Voltar" hidden>voltar</button>
+    <button  id="BTN02" name="BTN02" title="Proximo" hidden>Proximo</button>
     </form>
   </div>
 
@@ -299,5 +321,6 @@ include("./assets/PHP/Conexao.php");
 
 </body>
 <script src="assets/Json/Funcoes.js"></script>
+<script src="assets/Json/modulo9.js"></script>
 
 </html>

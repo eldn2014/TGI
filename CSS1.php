@@ -60,6 +60,7 @@ include("./assets/PHP/Conexao.php");
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/CSS/Style_painel.css">
+  <link rel="stylesheet" href="assets/CSS/Style_teste.css">
   <script src="jquery/jquery-3.5.1.min.js"></script>
 
 
@@ -276,13 +277,32 @@ include("./assets/PHP/Conexao.php");
   <h2 id="Titulo"> CSS Modulo 1</h2>
 
   <div id="Conteudo" class=<?php echo $_SESSION["Status_curso"]; ?>> 
-  
+
+  <h3>O que é o CSS?</h3>
+    <br>
+    <p>CSS (Cascading Style Sheets) é uma linguagem utilizada para estilizar documentos HTML e XML. Ele separa o conteúdo estrutural do documento (definido em HTML) da sua apresentação visual, permitindo controlar o layout, cores, fontes e outros aspectos visuais de uma página web. Utilizando regras que combinam seletores (identificadores de elementos) e declarações (propriedades e valores), o CSS oferece modularidade e flexibilidade, facilitando a criação de designs responsivos e agradáveis aos olhos em diferentes dispositivos.</p>
+
+   <br><br><br>
+
+   <div class="teste">
+    <h3> Selecione a opção correta</h3>
+    <p>O que o CSS é?</p>
+
+    <br><br><br>
+
+    <div class="BTN_teste">
+      <button id="btn01">Uma linguagem de programação usada em python.</button>
+      <button id="btn02">Uma linguagem de estilização para designs em paginas HTML.</button>
+      <button id="btn03">Uma linguagem de marcação usada para servidor.</button>
+    </div>
+
+    </div>
   </div>
 
   <div class="Botoes">
     <form method="POST" id="Botoes">
-    <button  id="BTN01" name="BTN01" title="Voltar" >voltar</button>
-    <button  id="BTN02" name="BTN02" title="Proximo">Proximo</button>
+    <button  id="BTN01" name="BTN01" title="Voltar" hidden >voltar</button>
+    <button  id="BTN02" name="BTN02" title="Proximo" hidden>Proximo</button>
     </form>
   </div>
 
@@ -299,5 +319,6 @@ include("./assets/PHP/Conexao.php");
 
 </body>
 <script src="assets/Json/Funcoes.js"></script>
+<script src="assets/Json/modulo5.js"></script>
 
 </html>

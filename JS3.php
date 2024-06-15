@@ -60,6 +60,7 @@ include("./assets/PHP/Conexao.php");
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/CSS/Style_painel.css">
+  <link rel="stylesheet" href="assets/CSS/Style_teste.css">
   <script src="jquery/jquery-3.5.1.min.js"></script>
 
 
@@ -277,9 +278,55 @@ include("./assets/PHP/Conexao.php");
 
   <div id="Conteudo" class=<?php echo $_SESSION["Status_curso"]; ?>> 
   
+  <h3>O que são Propriedades?</h3>
+    <br>
+    <p>Algumas função já são naturais do sistema e não há necessidade de refaze-las, são as chamadas metodos globais, segue uma lista dos metodos mais usados do JavaScript: <br>
+    <strong>Strings:</strong><br>
+    <strong>concat():</strong> Concatena duas ou mais strings.<br>
+    <strong> toUpperCase() e toLowerCase():</strong> Converte uma string para maiúsculas ou minúsculas.<br>
+    <strong>trim():</strong> Remove espaços em branco no início e no fim da string.<br>
+    <strong>split():</strong> Divide uma string em um array de substrings com base em um separador.<br>
+    <strong>indexOf() e lastIndexOf():</strong> Encontram a posição de uma substring na string.<br><br>
+    <strong>Arrays:</strong><br>
+    <strong>push() e pop():</strong>Adiciona e remove elementos no final do array.<br>
+    <strong>forEach():</strong> Executa uma função para cada elemento do array.<br>
+    <strong>map(): </strong>Cria um novo array com resultados de uma função aplicada a cada elemento.<br>
+    <strong>filter():</strong> Cria um novo array com elementos que passam em um teste.<br>
+    <strong>reduce(): </strong>Reduz o array a um único valor aplicando uma função acumuladora.<br><br>
+    <strong>Objetos:</strong><br>
+    <strong>Object.keys():</strong> Retorna as chaves enumeráveis de um objeto como um array.<br>
+    <strong>Object.values():</strong> Retorna os valores das propriedades enumeráveis de um objeto como um array.<br>
+   <strong>Object.entries():</strong> Retorna um array de arrays [chave, valor] para cada par de propriedade enumerável.<br>
+   <strong> Object.assign(): </strong>Copia os valores das propriedades próprias enumeráveis de objetos de origem para um objeto de destino.<br>
+
+    </p>
+
+   <br><br><br>
+
+   <div class="teste">
+    <h3> Selecione a opção correta</h3>
+    <p class="p1">O que são metodos globais?</p>
+    <p class="p1" style="color: green; font-weight: bold" hidden> Você acertou!!</p> <br>
+
+    <p class="p2 p" hidden>É verdade que os filtros criados pelo progrmador não podem receber parametros?</p>
+    <p class="p2" style="color: green; font-weight: bold" hidden> Você acertou!!</p> <br>
+
+    <br><br><br>
+
+    <div class="BTN_teste">
+      <button id="btn01">são metodos que é usado mundialmente.</button>
+      <button id="btn02">são metodos que só da pra usar uma vez</button>
+      <button id="btn03">são metodos que já são naturais do sistema, enão precisam ser recodificados.</button>
+
+      <button id="btn04" hidden>Verdadeiro</button>
+      <button id="btn05" hidden>Falso</button>
+    </div>
+
+    </div>
+
   </div>
 
-  <div class="Botoes">
+  <div class="Botoes" hidden>
     <form method="POST" id="Botoes">
     <button  id="BTN01" name="BTN01" title="Voltar" >voltar</button>
     <button  id="BTN02" name="BTN02" title="Proximo">Proximo</button>
@@ -299,5 +346,6 @@ include("./assets/PHP/Conexao.php");
 
 </body>
 <script src="assets/Json/Funcoes.js"></script>
+<script src="assets/Json/modulo11.js"></script>
 
 </html>

@@ -60,6 +60,7 @@ include("./assets/PHP/Conexao.php");
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/CSS/Style_painel.css">
+  <link rel="stylesheet" href="assets/CSS/Style_teste.css">
   <script src="jquery/jquery-3.5.1.min.js"></script>
 
 
@@ -276,13 +277,47 @@ include("./assets/PHP/Conexao.php");
   <h2 id="Titulo"> HTML Modulo 3 </h2>
 
   <div id="Conteudo" class=<?php echo $_SESSION["Status_curso"]; ?>> 
+    
+  <h3>O que são atributos de uma tag?</h3>
+    <br>
+    <p>Em HTML, os atributos são partes fundamentais das tags que permitem fornecer informações adicionais sobre como um elemento deve ser interpretado ou se comportar. Cada tag pode ter zero ou mais atributos, alguns atributos são compartilhados entre tags, porem outros são unicos de suas tags. <br></br>
+    exemplos de atributo de tags compartilhadas: <br>
+    Id,class,width, height, hidden e etc... <br> <br>
+    exemplos de atributo de tags especificas: <br>
+    href, muito usada na tag de link e tag a. 
+    src, muito usada na tag de img e script
+
+    </p>
+
+   <br><br><br>
+
+   <div class="teste">
+    <h3> Selecione a opção correta</h3>
+    <p class="p1">O que são atributos?</p>
+    <p class="p1" style="color: green; font-weight: bold" hidden> Você acertou!!</p> <br>
+
+    <p class="p2 p" hidden>É verdade que as tags possuem apenas 1 atributo?</p>
+    <p class="p2" style="color: green; font-weight: bold" hidden> Você acertou!!</p> <br>
+
+    <br><br><br>
+
+    <div class="BTN_teste">
+      <button id="btn01">é um texto que da valor a Tag.</button>
+      <button id="btn02">são valores que dão cor a tag e mostram seu valor.</button>
+      <button id="btn03">São Valores que orientam como o a tag irá se comportar ou ser interpretada.</button>
+      <button id="btn04" hidden>Verdadeiro</button>
+      <button id="btn05" hidden>Falso</button>
+    </div>
+
+    </div>
+
   
   </div>
 
-  <div class="Botoes">
+  <div class="Botoes" hidden>
     <form method="POST" id="Botoes">
-    <button  id="BTN01" name="BTN01" title="Voltar" >voltar</button>
-    <button  id="BTN02" name="BTN02" title="Proximo">Proximo</button>
+    <button  id="BTN01" name="BTN01" title="Voltar"  >voltar</button>
+    <button  id="BTN02" name="BTN02" title="Proximo" >Proximo</button>
     </form>
   </div>
 
@@ -299,5 +334,6 @@ include("./assets/PHP/Conexao.php");
 
 </body>
 <script src="assets/Json/Funcoes.js"></script>
+<script src="assets/Json/modulo3.js"></script>
 
 </html>

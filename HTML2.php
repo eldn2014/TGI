@@ -60,6 +60,7 @@ include("./assets/PHP/Conexao.php");
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/CSS/Style_painel.css">
+  <link rel="stylesheet" href="assets/CSS/Style_teste.css">
   <script src="jquery/jquery-3.5.1.min.js"></script>
 
 
@@ -275,14 +276,55 @@ include("./assets/PHP/Conexao.php");
 
   <h2 id="Titulo"> HTML Modulo 2 </h2>
 
-  <div id="Conteudo" class=<?php echo $_SESSION["Status_curso"]; ?>> 
+  <div id="Conteudo" class=<?php echo $_SESSION["Status_curso"]; ?>>
+
+    <div id="explicação">
+
+  <h3>O que uma tag?</h3>
+    <br>
+    <p>A tag server para estruturar e orientar o programador com o codigo, servindo de forma analoga a um mapa, as tags servem para adiconar elementos na tela do usuarios, como textos, imagens, audios e etc... <br>
+    A maioria das tags possuem abertura e fechamento, que são indicados por "<>" e "<\>" respectivamente e tudo que vai entre essas telas é chamado de conteúdo e é o que será mostrado na tela do usuario, porem algumas tag não necessitam desses indicadores. são exemplos de tags: <br><br>
+    <strong><code>&lt;h1&gt;...&lt;/h1&gt;</code></strong>: usada para definir titulos. <br>
+    <strong><code>&lt;p&gt;...&lt;/p&gt;</code></strong>: usada para definir paragrafos. <br>
+    <strong><code>&lt;li&gt;...&lt;/li&gt;</code></strong>: usada para definir itens de uma lista. <br>
+    <strong><code>&lt;ul&gt;...&lt;/ul&gt;</code></strong>: usada para definir lista que não segue uma sequência. <br> <br>
+    <strong><code>&lt;img&gt;...</code></strong>: usada para definir imagens, essa é uma tag especial chamada de empty tag, pois é usada para mostrar conteudos na tela como por exemplo imagens, devido a isso não precisam de tag de fechamento. </p>
+    <br>
+
+    </div>
+
+    <div id="div_teste" hidden>
+    <h3>Agora vamos ao teste.</h3>
+    <br><br>
+    <p>Na caixa abaixo Codifique uma tag de paragráfo com o conteudo olá mundo!</p>
+    <input type="text" id="caixa_input1">
+    <br><br>
+
+    <p>Na caixa abaixo Codifique uma tag de titulo h1 com o conteudo olá mundo!</p>
+    <input type="text" id="caixa_input2">
+    <br> <br>
+
+
+    </div>
+ 
+
+    <div class="BTN_teste">
+      <br> <br>
+      <button id="btn01">proximo.</button>
+      <button id="btn02" onclick="pegarTexto()" hidden> verificar</button>
+    </div>
+
+
+
+
+   <br><br><br>
   
   </div>
 
   <div class="Botoes">
     <form method="POST" id="Botoes">
-    <button  id="BTN01" name="BTN01" title="Voltar" >voltar</button>
-    <button  id="BTN02" name="BTN02" title="Proximo">Proximo</button>
+    <button  id="BTN01" name="BTN01" title="Voltar" hidden >voltar</button>
+    <button  id="BTN02" name="BTN02" title="Proximo" hidden >Proximo</button>
     </form>
   </div>
 
@@ -299,5 +341,6 @@ include("./assets/PHP/Conexao.php");
 
 </body>
 <script src="assets/Json/Funcoes.js"></script>
+<script src="assets/Json/modulo2.js"></script>
 
 </html>
